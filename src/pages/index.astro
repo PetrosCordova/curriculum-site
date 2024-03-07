@@ -1,16 +1,55 @@
 ---
+import Layouts from "../layouts/Layouts.astro";
 
+const title = 'motivation';
+const headerSection = {
+	responsable: "[Nom du responsable du recrutement]",
+    society: "Société [Nom de la société]",
+    address: "Adresse [Adresse de la société]",
+	date: 'Bruxelles le, 07/03/2024',
+    object: "Candidature spontanée au post d'inspecteur de qualité."
+}
+const bodyArticle =[
+	"Je me permets de vous adresser ma candidature pour le post d'[...post] au sein de votre entreprise, en réponse à un intérêt profond pour votre organisation et la conviction de que mes compétences en développement Web peuvent être mises au services de l'amelioration de la qualité de vos produits.",
+	"Bien que je n'aie pas d'expérience formelle en tant qu'[...post], je possède une solide expérience dans la domaine du développement Web, avec une expertise particulière dans la compréhension et structures des codes, la manipulation des ordinateurs et ses applications, comment aussi à la recherche d'une solution à toute situation que se présent instantanément. Mon expérience dans ce domaine m'a permis de développer des compétences essentielles telles que la rigueur, l'analysis critique et le souci de détail, toutes des qualités essentielles pou un [...post].",
+	"En dépit de mon absence d'expérience directe dans le domaine de l'[...post], je suis convaincu que mes compétences dans le développement Web peuvent être transférables et complémentaires á ce rôle. Ma capacité à identifier rapidement les anomalies, à résoudre des problèmes de manière méthodique et à travailler de manière autonome pourrait être un atout précieux pour votre équipe d'[...post].",
+	"Je suis particulièrement attiré par votre offre et je suis convaincu que rejoindre votre équipe me permettrait de contribuer significativement à l'amélioration continue de la qualité de vos produits.",
+	"Je me tiens à votre disposition pour discuter de ma candidature de manière plus approfondie lors d'un entretien. Je suis disponible par téléphone au +32 479 069 836 ou par email à jescordova@hotmail.com",
+	"Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées",
+]
+const footerArticle = [
+	"Cordialement,",
+	"Jesús Córdova Lizano"
+]
 ---
+<Layouts title={title}>
+	<section class=`${title} col-lg-9` id=`${title}`>
+		<div class="header-section">
+            <ul>
+				<li><h1>{headerSection.society}</h1></li>
+				<li><strong>M./Mme </strong>{headerSection.responsable}</li>
+				<li><em><small>{headerSection.address}</small></em></li>
+				<li><em><small>{headerSection.date}</small></em></li>
+				<li><strong>Objet: </strong>{headerSection.object}</li>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+            </ul>
+        </div>
+		<article class="article">
+			<div class="header-article">
+				<p><strong>Cher(e) M./Mme</strong> [Nom du chargé de recrutement]</p>
+			</div>
+			<div class="body-article">
+				{bodyArticle.map((item) =>
+					<p>{item}</p>
+				)}
+			</div>
+			<div class="footer-article">
+				<ul>
+					{footerArticle.map((item) => 
+						<li>{item}</li>
+					)}
+				</ul>
+			</div>
+		</article>
+	</section>
+</Layouts>

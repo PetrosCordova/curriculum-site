@@ -1,0 +1,26 @@
+---
+const {title} = Astro.props;
+const nav = {
+    title: title,
+    btnT: 'bi bi-arrow-bar-down',
+    btnM: 'bi bi-file-earmark-richtext',
+    btnC: 'bi bi-file-person'
+}
+---
+<div class="nav-links">
+    {title === 'motivation'
+        ? <a href="/"><h2>lettre de {nav.title}</h2></a>
+          <button class="btn"  title=`Télécharger Lettre ${nav.title}`><i class={nav.btnT}></i></button>
+          <a class="btn" href="/cv/" title="Aller au curriculum"><i class={nav.btnC}></i></a>
+              
+        : <a href=""><h1>{nav.title} vitae</h1></a>
+          <button class="btn"  title=`Télécharger ${nav.title} vitae`><i class={nav.btnT}></i></button>
+          <a class="btn" href="/" title="Aller au motivation"><i class={nav.btnM}></i></a>   
+    }
+        <a class="btn d-lg-none" 
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample"
+            role="button"
+            aria-controls="offcanvasExample"
+        ><i class="bi bi-list"></i></a>
+</div>

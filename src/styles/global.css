@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+html{
+    background-color: #e6f3f3;
+    font-family: sans-serif;
+    padding: 1rem;
+}
+body{
+    color: #555;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 90ch;
+    padding: 2rem 4rem 3rem 4rem;
+    background-color: #cce7e7;
+    box-shadow: 0 0 5px #777;
+    text-align: justify;
+}
+
+/* Navigation style */
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+.nav-links i{
+    font-size: 1.5rem;
+    border: 1px solid #e6f3f3;
+    padding: 0.3rem 0.5rem;
+    color: #e6f3f3;
+    border-radius: 0.3rem;
+    background-color: #018786;
+    transition: all 0.3s ease;
+}
+.nav-links a{
+    display: inline-block;
+    padding: 0;
+    text-decoration: none;
+}
+.nav-links h2{
+    text-transform: capitalize;
+    font-weight: lighter;
+    margin: 0;
+    color: #dc7126;
+    transition: all 0.3s ease;
+}
+.nav-links a h2:hover{
+    color: #b05a1e;
+    text-decoration: underline;
+}
+.nav-links a:nth-child(3){
+    margin-left: auto;
+}
+.nav-links i:hover,
+.nav-links i:focus{
+    background-color: #99cfcf;
+    color: #015f5e;
+    border-color: #015f5e;
+}
+
+
+/* Motivation style */
+.motivation{
+    margin-top: 1.5rem;
+    .header-section ul,
+	.footer-article ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: end;
+    }
+    .header-section h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .header-section ul li:first-child,
+	.footer-article ul li:first-child{
+		margin-bottom: 1rem;
+	}
+    .header-section ul li:last-child{
+		margin: 2rem 0;
+		text-align: start;
+	}
+}
