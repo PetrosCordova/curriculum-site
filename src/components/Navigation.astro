@@ -9,13 +9,13 @@ const nav = {
 ---
 <div class="nav-links">
     {title === 'motivation'
-        ? <a href="/"><h2>lettre de {nav.title}</h2></a>
-          <button class="btn"  title=`Télécharger Lettre ${nav.title}`><i class={nav.btnT}></i></button>
-          <a class="btn" href="/cv/" title="Aller au curriculum"><i class={nav.btnC}></i></a>
+        ? <h2><a href="/">lettre de {nav.title}</a></h2>
+        <a class="btn" href="/cv/" title="Aller au curriculum"><i class={nav.btnC}></i></a>
+        <button class="btn d-none" id="btnLM" title=`Télécharger Lettre ${nav.title}`><i class={nav.btnT}></i></button>
               
-        : <a href=""><h1>{nav.title} vitae</h1></a>
-          <button class="btn"  title=`Télécharger ${nav.title} vitae`><i class={nav.btnT}></i></button>
-          <a class="btn" href="/" title="Aller au motivation"><i class={nav.btnM}></i></a>   
+        : <h2><a href="">curriculum {nav.title} vitae</a></h2>
+        <a class="btn" href="/" title="Aller au motivation"><i class={nav.btnM}></i></a>   
+        <button class="btn d-none" id="btnCV" title=`Télécharger ${nav.title} vitae`><i class={nav.btnT}></i></button>
     }
         <a class="btn d-lg-none" 
             data-bs-toggle="offcanvas"
@@ -24,3 +24,6 @@ const nav = {
             aria-controls="offcanvasExample"
         ><i class="bi bi-list"></i></a>
 </div>
+<style>
+
+</style>
