@@ -1,0 +1,100 @@
+---
+const {title} = Astro.props;
+const user = {
+    picture: "moi.png",
+    first: "jesús",
+    last: "córdova",
+    job: "front-end",
+}
+const contact = [
+    {
+        icon: "bi bi-envelope",
+        item: "jescordova@hotmail.com",
+        display: 'mailto:m.bluth@example.com'
+    },
+    {
+        icon: "bi bi-geo-alt",
+        item: "1070 Anderlecht BE",
+        display: '#'
+    },
+    {
+        icon: "bi bi-phone",
+        item: "+32 (0) 479069836",
+        display: "tel:+32 0479069836"
+    },
+    {
+        icon: "bi bi-github",
+        item: "GitHub",
+        display: "#"
+    },
+    {
+        icon: "bi bi-linkedin",
+        item: "Linkedin",
+        display: "#"
+    }
+]
+const education = [
+    "développeur web",
+    "École de promotion social, Evere",
+    "2004-2007",
+    "Bruxelles - Belgique"
+]
+const skills = [
+    {name:"langues", content: ["html","css","javascript","php"]},
+    {name:"libraries", content: ["github","markdown","json"]},
+    {name:"frameworks", content: ["astro","vue","express","node"]},
+    {name:"graphisme", content: ["photoshop","illustrator","gimp"]},
+    {name:"base de donnée", content: ["mongoDB","mysql"]}
+]
+var stat = 'd-none';
+if(title === 'motivation'){ stat = stat;}
+else{stat= ''}
+---
+<aside class="offcanvas-lg offcanvas-end col-lg-3" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <section>
+        <header class="sec-header">
+            <img src=`../../public/${user.picture}` alt="Image User Cv" class="img-fluid rounded-circle" width="180">
+            <div class="user">
+                <span class="last-name h1">{user.last}</span>
+                <span class="h2">{user.first}</span>
+                <h2 class="lead">{user.job}</h2>          
+            </div>
+        </header>
+        <main class="sec-body">
+            <div class="contact">
+                <h2 class="cont header">contact</h2>
+                <ul class="nav cont body flex-column">
+                    {contact.map((i) =>
+                        <li class=""><a href={i.display}><i class={i.icon}></i> {i.item}</a></li>               
+                    )}
+                </ul>
+            </div>
+                <div class=`education ${stat}`>
+                    <h2 class="cont header">education</h2>
+                    <ul class="p-0">
+                        {education.map((i) => 
+                            <li>{i}</li>
+                        )}
+                    </ul>
+                </div>
+                <div class=`skills ${stat}`>
+                    <h2 class="cont header">compétences</h2>
+                    <ul class="">
+                        {skills.map((i) => 
+                            <li class="titre">{i.name}</li>
+                            <li>
+                                <ul class="ps-3 pb-3">
+                                    {i.content.map((c) =>
+                                        <li>{c}</li>
+                                    )}
+                                </ul>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+        </main>
+    </section>
+</aside>
+<style>
+    
+</style>
