@@ -2,54 +2,54 @@
 import Layouts from "../layouts/Layouts.astro";
 
 const title = 'motivation';
-const headerSection = {
-	responsable: "[Nom du responsable du recrutement]",
-    society: "Société [Nom de la société]",
-    address: "Adresse [Adresse de la société]",
+const lm = {
+	responsable: "[Responsable du recrutement]",
+    society: "[Nom de la société]",
+    address: "[Adresse de la société]",
 	date: 'Bruxelles le, 07/03/2024',
-    object: "Candidature spontanée au post d'inspecteur de qualité."
+    objet: "Candidature au post de Front-End (h/f).",
+	offre: "346790",
+	org: "Actiris"
 }
-const bodyArticle =[
-	"Je me permets de vous adresser ma candidature pour le post d'[...post] au sein de votre entreprise, en réponse à un intérêt profond pour votre organisation et la conviction de que mes compétences en développement Web peuvent être mises au services de l'amelioration de la qualité de vos produits.",
-	"Bien que je n'aie pas d'expérience formelle en tant qu'[...post], je possède une solide expérience dans la domaine du développement Web, avec une expertise particulière dans la compréhension et structures des codes, la manipulation des ordinateurs et ses applications, comment aussi à la recherche d'une solution à toute situation que se présent instantanément. Mon expérience dans ce domaine m'a permis de développer des compétences essentielles telles que la rigueur, l'analysis critique et le souci de détail, toutes des qualités essentielles pou un [...post].",
-	"En dépit de mon absence d'expérience directe dans le domaine de l'[...post], je suis convaincu que mes compétences dans le développement Web peuvent être transférables et complémentaires á ce rôle. Ma capacité à identifier rapidement les anomalies, à résoudre des problèmes de manière méthodique et à travailler de manière autonome pourrait être un atout précieux pour votre équipe d'[...post].",
-	"Je suis particulièrement attiré par votre offre et je suis convaincu que rejoindre votre équipe me permettrait de contribuer significativement à l'amélioration continue de la qualité de vos produits.",
-	"Je me tiens à votre disposition pour discuter de ma candidature de manière plus approfondie lors d'un entretien. Je suis disponible par téléphone au +32 479 069 836 ou par email à jescordova@hotmail.com",
-	"Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées",
+const lmContent =[
+	"Suite à votre annonce référencée  N° 000000 sur Actiris, je souhaiterais vous adresser ma candidature pour le post de Front-End au sein de votre entreprise. Je suis profondément intéressé pour votre organisation et convaincu que mes compétences en développement Web pourraient contribuer à améliorer la qualité de vos projets. Je suis très motivé à l'idée de mettre  mes connaissances et mon expérience au service de votre équipe.",
+	"Bien que je n’aie pas d’expérience formelle en tant que Front-End, je possède une solide expérience dans la domaine du développement Web. Mon expertise réside notamment dans la compréhension des structures de projets Web, l’intégration de codes à travers des outils tels que VS Code et GitHub, ainsi que dans ma capacité à trouver des solutions efficaces pour toute situation qui peut-être se présente dans vos projets. Cette expérience m’a permis de développer des compétences essentielles telles que la rigueur, l’analyse critique et le souci du détail, tous de qualités indispensables pour exceller en tant que Front-End. Je suis convaincu que ma solide base de connaissances et mon engagement à m’améliorer continuellement pourraient grandement contribuer à votre équipe et à la réussite de vos projets.",
+	"Conscient des implications financières liées à l’engagement d’un nouveau collaborateur, je suis disposé à vous offrir toutes les aides a l’emploi dont je peux bénéficier. Par exemple, nous pourrions envisager de débuter par un contrat de type FPI  (Stage rémunéré), accompagné d’un plan ACTIVA, Je remplis en effet les critères d’éligibilité au plan ACTIVA, qui représente l’une des aides les plus avantageuses disponibles sur le marché de l’emploi. Je suis ouverte à discuter de différentes options et à trouver ensemble la solution la plus appropriée pour faciliter notre collaboration.  Je suis disponible par téléphone au +32 (0).479.069.836 ou par e-mail à jescordova@hotmail.com.",
+	"Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.",
 ]
-const footerArticle = [
+const lmSignataire = [
 	"Cordialement,",
 	"Jesús Córdova Lizano"
 ]
 ---
 <Layouts title={title}>
-	<section class=`${title} col-lg-9` id=`${title}`>
-		<div class="header-section">
-            <ul>
-				<li><h1>{headerSection.society}</h1></li>
-				<li><strong>M./Mme </strong>{headerSection.responsable}</li>
-				<li><em><small>{headerSection.address}</small></em></li>
-				<li><em><small>{headerSection.date}</small></em></li>
-				<li><strong>Objet: </strong>{headerSection.object}</li>
-
-            </ul>
-        </div>
-		<article class="article">
-			<div class="header-article">
-				<p><strong>Cher(e) M./Mme</strong> [Nom du chargé de recrutement]</p>
-			</div>
-			<div class="body-article">
-				{bodyArticle.map((item) =>
-					<p>{item}</p>
-				)}
-			</div>
-			<div class="footer-article">
+	<section class="lm col-lg-9">
+		<article class="lm contenu">
+			<header class="lm header">
+				<h2>{lm.society}</h2>
 				<ul>
-					{footerArticle.map((item) => 
-						<li>{item}</li>
+					<li>{lm.responsable}</li>
+					<li>{lm.address}</li>
+					<li>{lm.date}</li>
+				</ul>
+			</header>
+			<main class="lm body">
+				<p>{lm.objet}</p>
+				<p>Référence N° : {lm.offre} {lm.org}</p>
+				<ul>
+					{lmContent.map((item) =>
+						<li><p>{item}</p></li>
 					)}
 				</ul>
-			</div>
+			</main>
+			<footer class="lm footer">
+				<ul>
+					{lmSignataire.map((sign)  => 
+						<li>{sign}</li>
+					)}
+				</ul>
+			</footer>
 		</article>
 	</section>
 </Layouts>
+<style></style>
