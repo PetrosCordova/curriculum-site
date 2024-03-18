@@ -1,0 +1,201 @@
+---
+import Layouts from "../layouts/Layouts.astro";
+
+const title = 'curriculum';
+
+const obj = {
+    title: "objectif",
+    list: [
+        "Créer ou développer des interfaces utilisateur.",
+        "Maîtrise de frameworks Front-End (Astro, Vue, React).",
+        "Avoir des compétences pour devenir un Full Stack.",
+        "Je souhaite aussi une maîtrise en UX / UX Design."
+    ]
+}
+const exp = {
+    title:  "expériences professionnelles",
+    list: [
+        {
+            carrier: "Full Stack Développeur",
+            post: "Tutorials",
+            where: "toile et formations",
+            ville: "Bruxelles-BE",
+            date: "... à présent / Web",
+            info: [
+                "Créer et déployer de sites Web en Astro.",
+                "Ajouter, styliser et lier des pages sur des sites avec Astro.",
+                "Construire et conserver des composants Astro UI.",
+                "Gagner du temps et mis en page, en pages réutilisables.",
+                "Amélioration et conception des blogs avec Astro",
+                "Utilisation des composant Bootstrap pour les sites Web.",
+                "Créer, rédiger les contenus des fichiers (.md et .json).",
+                "Créer de design responsive avec Bootstrap.",
+                "Création des squelettes Web avec le framework Express.",
+                "Utilisation de une Base de Donnée (MongoDB et MySQL)."
+            ]
+        },
+        {
+            carrier: "Back-End Développeur",
+            post: "Charge du projet Bureau à Louer",
+            where: "Euclides",
+            ville: "Bruxelles-BE",
+            date: "2008 - 2010 / Web",
+            info: [
+                "Conception et déploiement d’un site en (PHP, MySQL).",
+                "Animation d’un parque informatique pour personnes âgés.",
+                "Installation, dépannage et entretiens des ordinateurs."
+            ]
+        },
+        {
+            carrier: "Flash Développeur",
+            post: "Charge du projet animé en Flash",
+            where: "Ink Studio",
+            ville: "Saint-Gilles-BE",
+            date: "2008 - 6 mois / Web / Web",
+            info: [
+                "Conception et intégration des sites Web en Flash (Adobe).",
+                "Programmation Flash en langage native ActionScript.",
+                "Déploiement du site au server avec l’app File Zille."
+            ]
+        }
+    ]
+}
+
+const ryf = {
+    title: "études et formations",
+    list:[
+        {
+            year: "2004-2006",
+            name: "Développeur Web",
+            cole: "IEPS",
+            citadel: "EVERE"
+        },
+        {
+            year: "2004-2005",
+            name: "Web Designer",
+            cole: "EPFC 2",
+            citadel: "IXELLES"
+        },
+        {
+            year: "2004-2005",
+            name: "Multimédia",
+            cole: "EPFC 7",
+            citadel: "IXELLES"
+        },
+        {
+            year: "2002-2003",
+            name: "DAO 2D-3D",
+            cole: "EDPS",
+            citadel: "UCCLE"
+        },
+        {
+            year: "2000-2001",
+            name: "Équivalence",
+            cole: "CFDB",
+            citadel: "BRUXELLES"
+        },
+        {
+            year: "1984-1991",
+            name: "CESS Général",
+            cole: "CJFM",
+            citadel: "EQUATEUR"
+        },
+    ]
+}
+
+const lng = {
+    title: "langues",
+    list: [
+        {
+            name: "Français",
+            speak: "Couramment utilisé."
+        },
+        {
+            name: "Anglais",
+            speak: "Niveau technique."
+        },
+        {
+            name: "Espagnol",
+            speak: "Langue maternelle."
+        },
+    ]
+}
+
+const lsr = {
+    title: "loisir",
+    list: ["Jouer la guitare","jouer le charango","voyager",]
+}
+---
+<Layouts>
+	<section class="cv col-lg-9">
+        <article class="cv content card">
+            <header class="cv header card-header">{obj.title}</header>
+            <main class="cv body">
+                <ul class="py-3 ps-3">
+                    {obj.list.map((i) => <li class="card-text">{i}</li> )}
+                </ul>
+            </main>
+        </article>
+        <article class="cv content card">
+            <header class="cv header card-header">{exp.title}</header>
+            <main class="cv body card-body">
+                {exp.list.map((item) => 
+                    <ul class="">
+                        <li class="ic">{item.carrier}</li>
+                        <li class="is">
+                            <span>{item.where}</span>
+                            <span>{item.post}</span>
+                            <span>{item.ville}</span>
+                        </li>
+                        <li class="id">{item.date}</li>
+                        <li>
+                            <ul class="ii">
+                                {item.info.map((i) => <li>{i}</li> )}
+                            </ul>
+                        </li>
+                    </ul>
+                )}
+            </main>
+        </article>
+        <article class="cv content card">
+            <header class="cv header card-header">{ryf.title}</header>
+            <main class="cv body card-body">
+                <table class="table table-striped">
+                    <tbody>
+                        {ryf.list.map((item) => 
+                            <tr>
+                                <td>{item.year}</td>
+                                <td>{item.name}</td>
+                                <td>{item.cole}</td>
+                                <td>{item.citadel}</td>
+                            </tr>
+                        )}    
+                    </tbody>
+                </table>
+            </main>
+        </article>
+        <article class="cv content card">
+            <header class="cv header card-header">{lng.title}</header>
+            <main class="cv body card-body">
+                <ul>
+                    {lng.list.map((i) => 
+                        <li><span>{i.name} : </span><span>{i.speak}</span></li>
+                     )}
+                </ul>
+            </main>
+        </article>
+        <article class="cv content card">
+            <header class="cv header card-header">{lsr.title}</header>
+            <main class="cv body card-body">
+                <ul class="">
+                    <li>
+                        {lsr.list.map((i) => 
+                            <span>{i}, musique.</span>
+                        )}
+                    </li>
+                </ul>
+            </main>
+        </article>
+	</section>
+</Layouts>
+<style></style>
