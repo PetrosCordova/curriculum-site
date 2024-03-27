@@ -1,6 +1,6 @@
 ---
 const user = {
-    picture: "moi.png",
+    picture: "/../moi.png",
     first: "jesús",
     last: "córdova",
     job: "front-end"
@@ -50,7 +50,7 @@ let stat = "d-none";
 (title === "Lettre de Motivation") ? stat= stat : stat = "";
 ---
 
-<aside class="as col-lg-3">
+<aside class="offcanvas-lg offcanvas-end as col-lg-3" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <section class="as">
         <article class="as">
             <header class="as">
@@ -100,8 +100,10 @@ let stat = "d-none";
 
 <style>
     aside{
-        padding-left: 0;
+        padding-top: 0.7rem;
+        overflow-y: scroll;
         section{
+            /* padding-left: 0.7rem; */
             article{
                 header{
                     background: #F8F8F8; 
@@ -211,6 +213,16 @@ let stat = "d-none";
                     margin-bottom: 0;
                 }
                 footer{}
+            }
+        }
+    }
+    /* MEDIA QUERY */
+    @media (min-width: 992px){
+        aside{
+            padding-top: 0;
+            padding-left: 0;
+            section{
+                padding-left: 0;
             }
         }
     }
