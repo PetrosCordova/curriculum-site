@@ -117,7 +117,7 @@ const lng = {
 }
 const hob = {
     title: "Loisir",
-    list: ["Musique: Jouer des instruments de musique comme la guitare et charango,","Arts créatifs: Dessiner, peindre, expression artistiques pour me détendre et stimuler ma créativité en dehors du codage,","Suivre des tutorials et regarder des videos pour rester á jour avec les dernières technologies et tendances dans le domaine du développent web.",]
+    list: ["Musique: Jouer des instruments de musique comme la guitare et charango.","Arts créatifs: Dessiner, peindre, expression artistiques pour me détendre et stimuler ma créativité en dehors du codage.","Suivre des tutorials et regarder des videos pour rester á jour avec les dernières technologies et tendances dans le domaine du développent web.",]
 }
 ---
 
@@ -212,12 +212,14 @@ const hob = {
                     ul{
                         list-style: none;
                         margin: 0;
-                        padding: 1rem;
-                        /* padding-bottom: 0; */
+                    }
+                    ul:last-child{
+                        
                     }
                 }
                 .card:last-child{
                     margin: 0;
+                    padding-bottom: 0;
                 }
                 .exp{
                     .card-body{
@@ -251,18 +253,14 @@ const hob = {
                     margin-bottom: 0;
                 }
                 .hob{
-                   ul{
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 1rem;
-                    li{
-                        border-right: 5px double #E1E1E1;
-                        padding-right: 1rem;
+                    ul{
+                        li{
+                            padding-bottom: 1rem;
+                        }
+                        li:last-child{
+                            /* border: 0; */
+                        }
                     }
-                    li:last-child{
-                        border: 0;
-                    }
-                   }
                 }
             }
             footer{}
@@ -278,6 +276,23 @@ const hob = {
                 td{
                     width: 100%;
                 }
+            }
+        }
+    }
+}
+@media (min-width: 768px){
+    .hob{
+        list-style: none;
+        margin-left: -1rem;
+        ul{
+            display: flex;
+            gap: 1rem;
+            li{
+                /* border-right: 4px double #E1E1E1; */
+                padding: 0 0.5rem;
+                border: 1px solid #E1E1E1;
+                border-radius: 0.5rem;
+                padding: 0.4rem 1rem;
             }
         }
     }
