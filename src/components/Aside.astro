@@ -1,24 +1,24 @@
 ---
-const {title} = Astro.props;
 const user = {
     picture: "moi.png",
     first: "jesús",
     last: "córdova",
-    job: "front-end",
+    job: "front-end"
 }
+
 const contact = [
     {
-        icon: "bi bi-envelope",
+        icon: "bi bi-envelope-fill",
         item: "jescordova@hotmail.com",
         display: 'mailto:m.bluth@example.com'
     },
     {
-        icon: "bi bi-geo-alt",
+        icon: "bi bi-geo-alt-fill",
         item: "1070 Anderlecht BE",
         display: '#'
     },
     {
-        icon: "bi bi-phone",
+        icon: "bi bi-phone-fill",
         item: "+32 (0) 479069836",
         display: "tel:+32 0479069836"
     },
@@ -34,67 +34,184 @@ const contact = [
     }
 ]
 const education = [
-    "développeur web",
-    "École de promotion social, Evere",
-    "2004-2007",
+    "Développeur Web",
+    "EDPS, Evere - 2004-2008",
     "Bruxelles - Belgique"
 ]
 const skills = [
-    {name:"langues", content: ["html","css","javascript","php"]},
+    {name:"langues", content: ["html","css","javaScript","php"]},
     {name:"libraries", content: ["github","markdown","json"]},
-    {name:"frameworks", content: ["astro","vue","express","node"]},
+    {name:"frameworks", content: ["astro","vue","express","node","bootstrap"]},
     {name:"graphisme", content: ["photoshop","illustrator","gimp"]},
     {name:"base de donnée", content: ["mongoDB","mysql"]}
 ]
-var stat = 'd-none';
-if(title === 'motivation'){ stat = stat;}
-else{stat= ''}
+const {title} = Astro.props;
+let stat = "d-none";
+(title === "Lettre de Motivation") ? stat= stat : stat = "";
 ---
-<aside class="offcanvas-lg offcanvas-end col-lg-3" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <section>
-        <header class="sec-header">
-            <img src=`../../public/${user.picture}` alt="Image User Cv" class="img-fluid rounded-circle" width="180">
-            <div class="user">
-                <span class="last-name h1">{user.last}</span>
-                <span class="h2">{user.first}</span>
-                <h2 class="lead">{user.job}</h2>          
-            </div>
-        </header>
-        <main class="sec-body">
-            <div class="contact">
-                <h2 class="cont header">contact</h2>
-                <ul class="nav cont body flex-column">
-                    {contact.map((i) =>
-                        <li class=""><a href={i.display}><i class={i.icon}></i> {i.item}</a></li>               
-                    )}
+
+<aside class="as col-lg-3">
+    <section class="as">
+        <article class="as">
+            <header class="as">
+                <ul>
+                    <li><img src={user.picture} class="img-fluid" alt="JC"></li>
+                    <li><h1><span>{user.first}</span><span>{user.last}</span></h1></li>
+                    <li class="lead">{user.job}</li>
                 </ul>
-            </div>
+            </header>
+            <main class="as">
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <ul>
+                        {contact.map((i) =>
+                            <li><a href={i.display}><i class={i.icon}></i> {i.item}</a></li>               
+                        )}
+                    </ul>
+                </div>
                 <div class=`education ${stat}`>
-                    <h2 class="cont header">education</h2>
-                    <ul class="p-0">
+                    <h2>Études</h2>
+                    <ul>
                         {education.map((i) => 
                             <li>{i}</li>
                         )}
                     </ul>
                 </div>
                 <div class=`skills ${stat}`>
-                    <h2 class="cont header">compétences</h2>
-                    <ul class="">
+                    <h2>Compétences</h2>
+                    <ul>
                         {skills.map((i) => 
                             <li class="titre">{i.name}</li>
                             <li>
-                                <ul class="ps-3 pb-3">
+                                <ul>
                                     {i.content.map((c) =>
-                                        <li>{c}</li>
+                                        <li><a href="#">{c}</a></li>
                                     )}
                                 </ul>
                             </li>
                         )}
                     </ul>
                 </div>
-        </main>
+            </main>
+            <footer class="as"></footer>
+        </article>
     </section>
 </aside>
+
 <style>
-    
+    aside{
+        padding-left: 0;
+        section{
+            article{
+                header{
+                    background: #F8F8F8; 
+                    border: 1px solid #D1D1D1;
+                    margin-bottom: 0.7rem;
+                    border-radius: 0.4rem;
+                    padding: 0.7rem;
+                    padding-bottom: 0;
+                    ul{
+                        list-style: none;
+                        padding-left: 0;
+                        li{
+                            img{
+                                border-radius: 100%;
+                                border: 3px solid #fff;
+                                box-shadow: 0 0 10px #333;
+                            }
+                        }
+                        li{
+                            text-transform: capitalize;
+                            text-align: center;
+                            h1{
+                                padding-top: 1.2rem;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                gap: 0.5rem;
+                                color: #777;
+                                span{line-height: 1.7rem;}
+                                span:last-child{
+                                    color: #fff;
+                                    text-shadow: 0 0 10px #333;
+                                }
+                            }
+                        }
+                    }
+                }
+                main{
+                    .contact{
+                        li{
+                            border-top: 1px solid #E1E1E1;
+                            padding: 0.3rem 0;
+                            a{
+                                color: #777;
+                                text-decoration: none;
+                                transition: all 0.3s ease;
+                            }
+                            a:hover{
+                                color: #333;
+                                font-size: 0.89rem;
+                                padding-left: 0.5rem;
+                                font-weight: bold;
+                            }
+                        }
+                        li:first-child{
+                            border: 0;
+                        }
+                    }
+                    .education{color: #777;}
+                    .skills{
+                        >ul{
+                            text-transform: capitalize;
+                            .titre{
+                                color: #777;
+                                font-size: 1.1rem;
+                                font-weight: bold;
+                            }
+                            ul{
+                                padding-left: 1rem;   
+                                li{
+                                    a{
+                                        color: #777;
+                                        text-decoration: none;
+                                        transition: all 0.3s ease;
+                                    }
+                                    a:hover{
+                                        color: #333;
+                                        font-size: 0.89rem;
+                                        padding-left: 0.5rem;
+                                        font-weight: bold;
+                                    }
+                                }                            
+                            }
+                        }
+                    }
+                }
+                main>div{
+                    border: 1px solid #D1D1D1;
+                    padding: 0.7rem;
+                    border-radius: 0.4rem;
+                    margin-bottom: 0.7rem;
+                    h2{
+                        color: #777;
+                        /* margin-bottom: 0; */
+                        font-size: 1.4rem;
+                        text-transform: capitalize;
+                        background-color: #F5F5F5;
+                        padding: 0.3rem;
+                        border-radius: 0.4rem;
+                        border: 1px solid #E1E1E1;
+                    }
+                }
+                main>div>ul{
+                    list-style: none;
+                    padding-left: 0;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+                footer{}
+            }
+        }
+    }
 </style>
