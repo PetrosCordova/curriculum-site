@@ -1,57 +1,54 @@
 ---
-import Layouts from "../layouts/Layouts.astro";
-
-const title = 'curriculum';
-
+import Layout from "../layouts/Layout.astro";
+const title = "Curriculum Vitae";
 const obj = {
-    title: "objectif",
+    title: "Objectifs",
     list: [
-        "Créer ou développer des interfaces utilisateur.",
-        "Maîtrise de frameworks Front-End (Astro, Vue, React).",
-        "Avoir des compétences pour devenir un Full Stack.",
-        "Je souhaite aussi une maîtrise en UX / UX Design."
+        "Rester à jour avec les nouvelles technologies et les tendances émergentes dans le développement Web.",
+        "Développer mes compétences en résolution de problèmes en travaillant sur des projets réels et en cherchant des solutions à des défis techniques.",
+        "Travailler sur de projets en acquérant de l'experience pratique à la fois en développement Front-End et Back-End pour devenir un développeur Full Stack compétant et polyvalent."
     ]
 }
+
 const exp = {
-    title:  "expériences professionnelles",
+    title:  "Expériences Professionnelles",
     list: [
         {
             carrier: "Full Stack Développeur",
-            post: "Tutorials",
-            where: "toile et formations",
-            ville: "Bruxelles-BE",
-            date: "... à présent / Web",
+            post: "Maîtrise des langages de programmation",
+            where: "Auto-apprentissage",
+            ville: "Bruxelles - BE",
+            date: "2021 - 2024 (Web)",
             info: [
-                "Créer et déployer de sites Web en Astro.",
-                "Ajouter, styliser et lier des pages sur des sites avec Astro.",
-                "Construire et conserver des composants Astro UI.",
-                "Gagner du temps et mis en page, en pages réutilisables.",
-                "Amélioration et conception des blogs avec Astro",
-                "Utilisation des composant Bootstrap pour les sites Web.",
-                "Créer, rédiger les contenus des fichiers (.md et .json).",
-                "Créer de design responsive avec Bootstrap.",
-                "Création des squelettes Web avec le framework Express.",
-                "Utilisation de une Base de Donnée (MongoDB et MySQL)."
+                "HTML: Comprendre la structure et la sémantique des éléments HTML.",
+                "CSS: Savoir styliser les éléments HTML en utilisant les sélecteurs, les propriétés de mise en page et les techniques de mise e forme.",
+                "JS: Connaissances des concepts fondamentaux de la programmation JavaScript y compris les variables,les boucles, les fonctions et les objets. Cela inclut la manipulation du DOM côte client, ainsi que l'utilisation de Node.js pour le développement côté serveur.",
+                "Front-End: Compréhension des frameworks et des bibliothèques (Astro, Vue, Bootstrap) pour la création d'interfaces et utilisateur interactives.",
+                "Back-End: Utilisation des frameworks tels que Express and Node.js côté serveur.",
+                "DataBase: Comprendre les DB relationnelles (SQL) et no relationnelles (NoSQL) plus la conception des schémas, l'écriture des requêtes SQL, ORMs avec MongoDB et MySQL.",
+                "GIT: Utilisation du système de contrôle de versions Git pour la gestion diu code source, le suivi des version avec d'autres développeurs.",
+                "Gagner du temps et mis en page, en pages réutilisables en rédigent les contenus des fichiers (.md et .json).",
+                "Déployer des applications sur des serveurs en utilisant des services d'hébergement comme GitHub, Netlify",
             ]
         },
         {
             carrier: "Back-End Développeur",
             post: "Charge du projet Bureau à Louer",
             where: "Euclides",
-            ville: "Bruxelles-BE",
-            date: "2008 - 2010 / Web",
+            ville: "Bruxelles - BE",
+            date: "2008 - 2010 (Web)",
             info: [
-                "Conception et déploiement d’un site en (PHP, MySQL).",
+                "Conception et déploiement d’un site web avec les technologies (Symfony, PHP, MySQL).",
                 "Animation d’un parque informatique pour personnes âgés.",
-                "Installation, dépannage et entretiens des ordinateurs."
+                "Installation, dépannage et entretiens des ordinateurs de bureau."
             ]
         },
         {
             carrier: "Flash Développeur",
             post: "Charge du projet animé en Flash",
             where: "Ink Studio",
-            ville: "Saint-Gilles-BE",
-            date: "2008 - 6 mois / Web / Web",
+            ville: "Saint-Gilles - BE",
+            date: "2008 - 2008 (Web)",
             info: [
                 "Conception et intégration des sites Web en Flash (Adobe).",
                 "Programmation Flash en langage native ActionScript.",
@@ -60,51 +57,49 @@ const exp = {
         }
     ]
 }
-
-const ryf = {
-    title: "études et formations",
+const eyf = {
+    title: "Études et Formations",
     list:[
         {
             year: "2004-2006",
             name: "Développeur Web",
             cole: "IEPS",
-            citadel: "EVERE"
+            citadel: "Evere"
         },
         {
             year: "2004-2005",
             name: "Web Designer",
-            cole: "EPFC 2",
-            citadel: "IXELLES"
+            cole: "EPFC2",
+            citadel: "Ixelles"
         },
         {
             year: "2004-2005",
             name: "Multimédia",
-            cole: "EPFC 7",
-            citadel: "IXELLES"
+            cole: "EPFC7",
+            citadel: "Ixelles"
         },
         {
             year: "2002-2003",
-            name: "DAO 2D-3D",
+            name: "DAO : 2D - 3D",
             cole: "EDPS",
-            citadel: "UCCLE"
+            citadel: "Uccle"
         },
         {
             year: "2000-2001",
             name: "Équivalence",
             cole: "CFDB",
-            citadel: "BRUXELLES"
+            citadel: "Bruxelles"
         },
         {
             year: "1984-1991",
             name: "CESS Général",
             cole: "CJFM",
-            citadel: "EQUATEUR"
+            citadel: "Équateur"
         },
     ]
 }
-
 const lng = {
-    title: "langues",
+    title: "Langues",
     list: [
         {
             name: "Français",
@@ -120,82 +115,161 @@ const lng = {
         },
     ]
 }
-
-const lsr = {
-    title: "loisir",
-    list: ["Jouer la guitare","jouer le charango","voyager",]
+const hob = {
+    title: "Loisir",
+    list: ["Musique: Jouer des instruments de musique comme la guitare et charango,","Arts créatifs: Dessiner, peindre, expression artistiques pour me détendre et stimuler ma créativité en dehors du codage,","Suivre des tutorials et regarder des videos pour rester á jour avec les dernières technologies et tendances dans le domaine du développent web.",]
 }
 ---
-<Layouts>
-	<section class="cv col-lg-9">
-        <article class="cv content card">
-            <header class="cv header card-header">{obj.title}</header>
-            <main class="cv body">
-                <ul class="py-3 ps-3">
-                    {obj.list.map((i) => <li class="card-text">{i}</li> )}
-                </ul>
-            </main>
-        </article>
-        <article class="cv content card">
-            <header class="cv header card-header">{exp.title}</header>
-            <main class="cv body card-body">
-                {exp.list.map((item) => 
-                    <ul class="">
-                        <li class="ic">{item.carrier}</li>
-                        <li class="is">
-                            <span>{item.where}</span>
-                            <span>{item.post}</span>
-                            <span>{item.ville}</span>
-                        </li>
-                        <li class="id">{item.date}</li>
-                        <li>
-                            <ul class="ii">
-                                {item.info.map((i) => <li>{i}</li> )}
-                            </ul>
-                        </li>
+
+<Layout title={title}>
+    <section class="cv col-lg-9">
+        <article class="cv">
+            <header class="cv">
+                <div class="card">
+                    <h2 class="card-header">{obj.title}</h2>
+                    <ul class="card-body">
+                        {obj.list.map((i) => <li class="card-text">{i}</li> )}
                     </ul>
-                )}
-            </main>
-        </article>
-        <article class="cv content card">
-            <header class="cv header card-header">{ryf.title}</header>
-            <main class="cv body card-body">
-                <table class="table table-striped">
-                    <tbody>
-                        {ryf.list.map((item) => 
-                            <tr>
-                                <td>{item.year}</td>
-                                <td>{item.name}</td>
-                                <td>{item.cole}</td>
-                                <td>{item.citadel}</td>
-                            </tr>
-                        )}    
-                    </tbody>
-                </table>
-            </main>
-        </article>
-        <article class="cv content card">
-            <header class="cv header card-header">{lng.title}</header>
-            <main class="cv body card-body">
-                <ul>
-                    {lng.list.map((i) => 
-                        <li><span>{i.name} : </span><span>{i.speak}</span></li>
-                     )}
-                </ul>
-            </main>
-        </article>
-        <article class="cv content card">
-            <header class="cv header card-header">{lsr.title}</header>
-            <main class="cv body card-body">
-                <ul class="">
-                    <li>
-                        {lsr.list.map((i) => 
-                            <span>{i}, musique.</span>
+                </div>
+            </header>
+            <main class="cv">
+                <div class="card exp">
+                    <h2 class="card-header">{exp.title}</h2>
+                    {exp.list.map((item) => 
+                        <ul class="card-body">
+                            <li class="carrier">{item.carrier} : <span class="date">{item.date}</span></li>
+                            <li class="ville">
+                                <span>{item.where}</span>
+                                <span>{item.post}</span>
+                                <span>{item.ville}</span>
+                            </li>
+                            <li>
+                                <ul>
+                                    {item.info.map((i) => <li>{i}</li> )}
+                                </ul>
+                            </li>
+                        </ul>
+                    )}   
+                </div>
+                <div class="card form">
+                    <h2 class="card-header">{eyf.title}</h2>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <tbody>
+                                {eyf.list.map((item) => 
+                                    <tr>
+                                        <td>{item.year}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.cole}</td>
+                                        <td>{item.citadel}</td>
+                                    </tr>
+                                )}    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card lang">
+                    <h2 class="card-header">{lng.title}</h2>
+                    <ul class="card-body">
+                        {lng.list.map((i) => 
+                            <li><span>{i.name} : </span><span>{i.speak}</span></li>
+                         )}
+                    </ul>
+                </div>
+                <div class="card hob">
+                    <h2 class="card-header">{hob.title}</h2>
+                    <ul class="card-body">
+                        {hob.list.map((i) => 
+                            <li>{i}</li>
                         )}
-                    </li>
-                </ul>
+                    </ul>
+                </div>
             </main>
+            <footer class="cv"></footer>
         </article>
-	</section>
-</Layouts>
-<style></style>
+    </section>
+</Layout>
+
+<style>
+    section{
+        article{
+            header{
+                margin-bottom: 0.7rem;
+                .card{
+                    h2{color: #777;}
+                    ul{
+                        padding-left: 2rem;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            main{
+                .card{
+                    margin-bottom: 0.7rem;
+                    h2{
+                        color: #777;
+                    }
+                    ul{
+                        list-style: none;
+                        margin: 0;
+                        padding: 1rem;
+                        /* padding-bottom: 0; */
+                    }
+                }
+                .card:last-child{
+                    margin: 0;
+                }
+                .exp{
+                    .card-body{
+                        .carrier{
+                            font-weight: bold;
+                            text-transform: uppercase;
+                        }
+                        .ville{
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 0.7rem;
+                            font-weight: bold;
+                        }
+                        .date{
+                            color: #999;
+                            font-style: italic;
+                            font-size: 0.9rem;
+                        }
+                        li:last-child{
+                            ul{
+                                list-style: circle;
+                                padding: 0;
+                                margin: 0;
+                                padding-left: 1rem;
+                            }
+                        }
+                    }
+                }
+                table{
+                    margin-bottom: 0;
+                }
+                .hob{
+                   ul{
+                    display: flex;
+                    gap: 1rem;
+                    li{
+                        border-right: 5px double #E1E1E1;
+                        padding-right: 1rem;
+                    }
+                    li:last-child{
+                        border: 0;
+                    }
+                   }
+                }
+            }
+            footer{}
+        }
+    }
+    /* .cv .card{
+        margin-bottom: 1rem;
+    }
+    main .card:last-child{
+        margin-bottom: 0;
+    } */
+</style>
