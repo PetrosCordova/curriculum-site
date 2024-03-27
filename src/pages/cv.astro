@@ -228,6 +228,7 @@ const hob = {
                         .ville{
                             display: flex;
                             justify-content: space-between;
+                            flex-wrap: wrap;
                             margin-bottom: 0.7rem;
                             font-weight: bold;
                         }
@@ -252,6 +253,7 @@ const hob = {
                 .hob{
                    ul{
                     display: flex;
+                    flex-wrap: wrap;
                     gap: 1rem;
                     li{
                         border-right: 5px double #E1E1E1;
@@ -266,10 +268,18 @@ const hob = {
             footer{}
         }
     }
-    /* .cv .card{
-        margin-bottom: 1rem;
+    /* MEDIA QUERY */
+@media (max-width: 768px){
+    table{
+        tbody{
+            tr{
+                display: flex;
+                flex-wrap: wrap;
+                td{
+                    width: 100%;
+                }
+            }
+        }
     }
-    main .card:last-child{
-        margin-bottom: 0;
-    } */
+}
 </style>
