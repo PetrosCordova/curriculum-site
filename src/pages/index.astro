@@ -1,55 +1,121 @@
 ---
-import Layouts from "../layouts/Layouts.astro";
+import Layout from "../layouts/Layout.astro";
 
-const title = 'motivation';
+const title = "Lettre de Motivation";
 const lm = {
-	responsable: "[Responsable du recrutement]",
-    society: "[Nom de la société]",
-    address: "[Adresse de la société]",
-	date: 'Bruxelles le, 07/03/2024',
-    objet: "Candidature au post de Front-End (h/f).",
-	offre: "346790",
+	responsable: "[Nom du Responsable du recrutement]",
+    society: "[Nom de l'Entreprise]",
+    address: "[Adresse de l'Entreprise]",
+	date: 'Ville, Code Postal',
+	diploma: 'Développeur Web',
+    post: "Développeur Front-End",
+	ref: "000000",
 	org: "Actiris"
 }
 const lmContent =[
-	"Suite à votre annonce référencée  N° 000000 sur Actiris, je souhaiterais vous adresser ma candidature pour le post de Front-End au sein de votre entreprise. Je suis profondément intéressé pour votre organisation et convaincu que mes compétences en développement Web pourraient contribuer à améliorer la qualité de vos projets. Je suis très motivé à l'idée de mettre  mes connaissances et mon expérience au service de votre équipe.",
-	"Bien que je n’aie pas d’expérience formelle en tant que Front-End, je possède une solide expérience dans la domaine du développement Web. Mon expertise réside notamment dans la compréhension des structures de projets Web, l’intégration de codes à travers des outils tels que VS Code et GitHub, ainsi que dans ma capacité à trouver des solutions efficaces pour toute situation qui peut-être se présente dans vos projets. Cette expérience m’a permis de développer des compétences essentielles telles que la rigueur, l’analyse critique et le souci du détail, tous de qualités indispensables pour exceller en tant que Front-End. Je suis convaincu que ma solide base de connaissances et mon engagement à m’améliorer continuellement pourraient grandement contribuer à votre équipe et à la réussite de vos projets.",
-	"Conscient des implications financières liées à l’engagement d’un nouveau collaborateur, je suis disposé à vous offrir toutes les aides a l’emploi dont je peux bénéficier. Par exemple, nous pourrions envisager de débuter par un contrat de type FPI  (Stage rémunéré), accompagné d’un plan ACTIVA, Je remplis en effet les critères d’éligibilité au plan ACTIVA, qui représente l’une des aides les plus avantageuses disponibles sur le marché de l’emploi. Je suis ouverte à discuter de différentes options et à trouver ensemble la solution la plus appropriée pour faciliter notre collaboration.  Je suis disponible par téléphone au +32 (0).479.069.836 ou par e-mail à jescordova@hotmail.com.",
-	"Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.",
+	"Madame, Monsieur,",
+	`Je me permet de vous adresser ma candidature pour le post de ${lm.post} au sens de votre entreprise, 
+	 suite à votre référence N°: ${lm.ref} sur ${lm.org}. Attiré par votre vision novatrice et votre réputation d'excellence dans le domaine du ${lm.diploma},
+	 je suis convaincu que mon profil et mes compétences pourraient apporter une valeur ajoutée à votre équipe.`,
+	 `Malgré le fait que je n'ai pas encore eu l'opportunité de travailler professionnellement en tant que ${lm.post},
+	 je possède une solide base de connaissances dans ce domaine. Ayant consacré de nombreuses heures à l'auto-apprentissage et à la pratique,
+	 j'ai acquis une expertise significative dans les langages et technologies essentiels au ${lm.diploma}, notamment HTML, CSS et JavaScript. De plus, je 
+	 suis familier avec des frameworks tels que Astro, Express, Bootstrap et bibliothèques comme GitHub, Markdown et Json et la connaissances en MongoDb et MySQL.`,
+	 `Mon parcours académique dans ${lm.diploma} m'a également permis de développer des compétences en analyse, résolution de problèmes et en collaboration, des qualités essentielles 
+	 pour réussir dans la domaine du ${lm.diploma}. Ma capacité à apprendre rapidement de nouvelles technologies et concepts me permettrait de m'adapter efficacement à
+	 l'environnement de votre entreprise et d'apporter des solutions innovantes à vos projets.`,
+	 `Je suis passionné par le ${lm.diploma} et je suis constamment à l'affût des dernières tendances et des meilleures pratiques de l'industrie. 
+	 Je suis convaincu que mon enthousiasme, ma détermination et mon désir d'apprendre pourraient contribuer de manière significative à la réussite de votre équipe.`, 
+	`Je serais ravi de discuter avec vous de ma candidature et de mes perspective d'avenir au sein de votre entreprise.
+	Je suis disponible pour un entretien à votre convenance et je vous remercie par avance de l'attention que vous porterez à ma candidature.`,
+	// "Conscient des implications financières liées à l’engagement d’un nouveau collaborateur, je suis disposé à vous offrir toutes les aides a l’emploi dont je peux bénéficier. Par exemple, nous pourrions envisager de débuter par un contrat de type FPI  (Stage rémunéré), accompagné d’un plan ACTIVA, Je remplis en effet les critères d’éligibilité au plan ACTIVA, qui représente l’une des aides les plus avantageuses disponibles sur le marché de l’emploi. Je suis ouverte à discuter de différentes options et à trouver ensemble la solution la plus appropriée pour faciliter notre collaboration.  Je suis disponible par téléphone au +32 (0).479.069.836 ou par e-mail à jescordova@hotmail.com.",
 ]
-const lmSignataire = [
+const lmFirm = [
+	"Je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.",
 	"Cordialement,",
 	"Jesús Córdova Lizano"
 ]
 ---
-<Layouts title={title}>
+
+<Layout title={title}>
 	<section class="lm col-lg-9">
-		<article class="lm contenu">
-			<header class="lm header">
+		<!-- Button trigger modal -->
+		<article class="lm">
+			<header class="lm">
 				<h2>{lm.society}</h2>
 				<ul>
-					<li>{lm.responsable}</li>
-					<li>{lm.address}</li>
-					<li>{lm.date}</li>
+					<li><p>{lm.responsable}</p></li>
+					<li><p>{lm.address}</p></li>
+					<li><p>{lm.date}</p></li>
 				</ul>
 			</header>
-			<main class="lm body">
-				<p>{lm.objet}</p>
-				<p>Référence N° : {lm.offre} {lm.org}</p>
+			<main class="lm">
 				<ul>
+					<li><p>Candidature au post de {lm.post} (f/h)</p></li>
+					<li><p>Référence N° : {lm.ref} - {lm.org}</p></li>
 					{lmContent.map((item) =>
 						<li><p>{item}</p></li>
 					)}
 				</ul>
 			</main>
-			<footer class="lm footer">
+			<footer class="lm">
 				<ul>
-					{lmSignataire.map((sign)  => 
-						<li>{sign}</li>
+					{lmFirm.map((sign)  => 
+						<li><p>{sign}</p></li>
 					)}
+					<li><p>{lm.diploma}</p></li>
 				</ul>
 			</footer>
 		</article>
 	</section>
-</Layouts>
-<style></style>
+</Layout>
+
+<style>
+	article{
+        border: 1px solid #D2D2D2;
+        height: 100%;
+        padding: 0.8rem;
+        border-radius: 0.3rem;
+    }
+	header{
+		text-align: right;
+		h2{
+			font-family: "Protest Guerrilla", sans-serif;
+		}
+		ul{
+			li:nth-child(2) p{
+				margin-bottom: 0;
+			}
+			li:last-child p{
+				font-style: italic;
+			}
+		}
+	}
+	main{
+		text-align: justify;
+		ul{
+			li:first-child p{
+				margin-bottom: 0;
+				margin-top: 2rem;
+			}
+			li:nth-child(2){
+				font-style: italic;
+			}
+		}
+	}
+	footer{
+		text-align: right;
+		ul{
+			li:first-child{
+				text-align: left;
+			}
+			li:nth-child(3) p{
+				margin-bottom: 0;
+			}
+		}
+	}
+	ul{
+		list-style-type: none;
+		padding-left: 0;
+	}
+</style>
